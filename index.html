@@ -1,21 +1,405 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-    <h1>{{ page.title }}</h1>
-    <section>
-      {{ content }}
-    </section>
-    <footer>
-      &copy; to me
-    </footer>
-  </body>
+
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>The Powerful Mod by Ricky Ho</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.2/math.min.js"></script>
+
+  <style>
+    body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #031d72;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .margin {
+      margin-bottom: 45px;
+    }
+
+    .bg-1 {
+      background-color: #004370;
+      /* Green */
+      color: #ffffff;
+    }
+
+    .bg-2 {
+      background-color: #102d6b;
+      /* Dark Blue */
+      color: #ffffff;
+    }
+
+    .bg-3 {
+      background-color: #4cbcf0;
+      /* White */
+      color: #555555;
+    }
+
+    .bg-4 {
+      background-color: #2f2f2f;
+      /* Black Gray */
+      color: #fff;
+    }
+
+    .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+    }
+
+    .navbar-nav li a:hover {
+      color: #1abc9c !important;
+    }
+
+    input[type=text] {
+      width: 100%;
+      color: rgb(88, 88, 216);
+      font-family: Verdana;
+      font-weight: bold;
+      font-size: 18px;
+
+      text-align: center;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 3px solid #ccc;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    input[type=text]:focus {
+      border: 3px solid #555;
+    }
+
+    select {
+      color: rgb(255, 137, 82);
+    }
+
+    option:not(first-child) {
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"> The Powerful Mod <sub>By Ricky</sub> </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">HOME</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- First Container -->
+  <div class="container-fluid bg-1 text-center">
+    <h3 class="margin"> Selector </h3>
+    <label class="mdb-main-label">Select mod calculator : </label>
+    <select class="js-example-basic-single" name="model">
+      <option value="mod1">mod1</option>
+      <option value="mod2">mod2</option>
+      <option value="gcd">GCD</option>
+    </select>
+
+  </div>
+  <div class="mod1 box">
+    <div class="container-fluid bg-2 text-center">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+        <h3 class="margin"> Computes (base)<sup>(exponent)</sup> mod (modulus)
+          in log(exponent) time.</h3>
+
+        <br>
+        </p>
+
+        <form name="powermod" id="powermod">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Base:
+                  <input type="text" class="form-control" value="" name="pmbase" onchange="pmout.value=&#39;&#39;;"
+                    kl_vkbd_parsed="true"></td>
+                <td>Exponent:
+                  <input type="text" class="form-control" value="" name="pmexp" onchange="pmout.value=&#39;&#39;;"
+                    kl_vkbd_parsed="true"></td>
+                <td>Modulus:
+                  <input type="text" class="form-control" value="" name="pmmod" onchange="pmout.value=&#39;&#39;;"
+                    kl_vkbd_parsed="true"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+
+          <button type="input" class="btn btn-primary btn-lg" id="startFn" data-toggle="button" aria-pressed="false"
+            autocomplete="off" onclick="pmout.value=mpmod(pmbase.value, pmexp.value, pmmod.value); Pointout(); ">
+            Start Mod One
+          </button>
+          <button type="reset" class="btn btn-info btn-lg">Reset </button>
+    </div>
+
+
+
+  </div>
+  <div class="mod2 box" id="boxMod2">
+
+    <div class="container-fluid bg-2 text-center">
+      <h3 class="margin"> a mod b (acceptable for negative values.) </h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>a
+              <input type="text" class="form-control" id="inA" value="" kl_vkbd_parsed="true"></td>
+            <td> </td>
+            <td>b
+              <input type="text" class="form-control" id="inB" value="" kl_vkbd_parsed="true"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="input" class="btn btn-warning btn-lg" id="modTwo" data-toggle="button" aria-pressed="false"
+        autocomplete="off" >
+        Start Mod Two
+      </button>
+
+      <button type="reset" class="btn btn-info btn-lg">Reset </button>
+    </div>
+
+  </div>
+
+  <div class="gcd box" id="boxGCD">
+
+    <div class="container-fluid bg-2 text-center">
+      <h3 class="margin"> Find GCD between a and b </h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>a
+              <input type="text" class="form-control" id="gcdA" value="" kl_vkbd_parsed="true"></td>
+            <td> </td>
+            <td>b
+              <input type="text" class="form-control" id="gcdB" value="" kl_vkbd_parsed="true"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button type="input" class="btn btn-warning btn-lg" id="gcdCal" data-toggle="button" aria-pressed="false"
+        autocomplete="off" onclick="">
+        Start GCD
+      </button>
+
+      <button type="reset" class="btn btn-info btn-lg">Reset </button>
+    </div>
+
+  </div>
+
+
+  <!-- Second Container -->
+  <div class="container-fluid bg-3 text-center" id="OutResultDiv">
+    <h3 class="margin">Answer : <font size="-1"> b <sup> e </sup> MOD</font> <i>m</i> | a mod b = </h3>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+      <tr>
+        <td align="center"><input type="text" class="form-control" value="Please Input First.." name="pmout"
+            id="pmout_ans" onchange="pmout.value=&#39;&#39;;" kl_vkbd_parsed="true">
+        </td>
+      </tr>
+    </table>
+    <!-- <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a> -->
+  </div>
+  </form>
+
+
+  <!-- Third Container (Grid) -->
+  <!-- <div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Where To Find Me?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div> -->
+
+  <!-- Footer -->
+  <footer class="container-fluid bg-4 text-center">
+    <p>The Theme Made By <a href="https://www.rickyHobbb.com">www.rickyHobbb.com</a></p>
+  </footer>
+
+</body>
+
 </html>
+
+
+<script language="JavaScript">
+// Swizy
+
+  $(document).ready(function () {
+    $("select").change(function () {
+      $(this).find("option:selected").each(function () {
+        var optionValue = $(this).attr("value");
+        if (optionValue) {
+          $(".box").not("." + optionValue).hide();
+          $("." + optionValue).show();
+
+          $("#pmout_ans").val('Please Input ...');
+
+        } else {
+          $(".box").hide();
+
+        }
+      });
+    }).change();
+  });
+  //pmout_ans
+
+function Pointout()
+{
+
+  $(window).scrollTop($('#OutResultDiv').offset().top);
+}
+
+
+  $('#modTwo').click(function () {
+
+    cal_a = $('#inA').val();
+    cal_b = $('#inB').val();
+
+    a = parseInt(cal_a);
+    b = parseInt(cal_b);
+
+    answer = a % b;
+    console.log("---------------------")
+    console.log(a+ "%" +b +": " + answer);
+
+    console.log("---------------------")
+
+    if (answer < 0) {
+
+      answer = (b < 0) ? answer - b : answer + b;
+
+
+      console.log(" The hidden case :" + answer)
+      $('input[name="pmout"]').val(answer);
+    } else {
+
+      $('input[name="pmout"]').val(answer);
+
+    }
+    console.log("-=============")
+    $(window).scrollTop($('#OutResultDiv').offset().top);
+
+
+  });
+
+  // Point to Box Mod and enter
+
+  $("#boxMod2 input").keypress(function (event) {
+    if (event.which == 13) {
+      event.preventDefault();
+      //alert('You pressed enter!');
+      $('#modTwo').click();
+    }
+  });
+
+
+  $('#gcdCal').click(function () {
+
+    cal_a = $('#gcdA').val();
+    cal_b = $('#gcdB').val();
+
+    answer = math.gcd(cal_a, cal_b)
+
+    $('input[name="pmout"]').val(answer);
+
+    $(window).scrollTop($('#OutResultDiv').offset().top);
+  });
+
+
+  $("#boxGCD input").keypress(function (event) {
+    if (event.which == 13) {
+      event.preventDefault();
+      //alert('You pressed enter!');
+      $('#gcdCal').click();
+    }
+  });
+
+
+
+  function mpmod(base, exponent, modulus) {
+    if ((base < 1) || (exponent < 0) || (modulus < 1)) {
+      return ("invalid");
+    }
+    result = 1;
+    while (exponent > 0) {
+      if ((exponent % 2) == 1) {
+        result = (result * base) % modulus;
+      }
+      base = (base * base) % modulus;
+      exponent = Math.floor(exponent / 2);
+    }
+    return (result);
+
+  }
+
+  function eulerphi(x) {
+    result = 0;
+    for (i = 1; i < x; i++) {
+      if (isunit(i, x)) {
+        result++;
+      }
+    }
+    return (result);
+  }
+
+
+  var doccolor = "ff80ff";
+
+  function shadetd(alignment) {
+    document.write("<td bgcolor=" + doccolor + " align=" + alignment + ">");
+  }
+
+
+
+</script>
